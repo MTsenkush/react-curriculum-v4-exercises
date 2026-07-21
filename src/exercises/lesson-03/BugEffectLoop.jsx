@@ -15,10 +15,12 @@ export default function BugEffectLoop() {
 
   useEffect(() => {
     setCount(count + 1);
-  });
+  }, []);
 
   return <p>Bug 1 Count: {count}</p>;
 }
 
 // Explanation:
-// (Write your explanation here)
+// We had to set dependency array [].
+// In this assignment it has to be empty to run setCount just 1 time on mount.
+// Without setting [DA] we get into infinite re-renderiring loop due to setCount that triggers new render.
