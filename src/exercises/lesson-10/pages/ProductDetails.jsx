@@ -1,13 +1,13 @@
 import { Link, useParams } from 'react-router';
 
 export default function ProductDetails({ products }) {
-  const id = null;
+  const { id } = useParams();
 
   const product = products.find((p) => p.id === id);
 
   return (
     <section>
-      <h2>Product Details</h2>``
+      <h2>Product Details</h2>
       {product ? (
         <div
           style={{ border: '1px solid #ddd', borderRadius: 10, padding: 12 }}
